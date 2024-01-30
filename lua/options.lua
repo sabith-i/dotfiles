@@ -3,7 +3,13 @@
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
+
+-- Show matching brackets 
+vim.o.showmatch = true
+
+-- Disable incremental search (search while typnig)
+vim.o.incsearch = false
 
 -- Make line numbers default
 vim.wo.number = true

@@ -14,6 +14,21 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- Navigation keymaps
+vim.keymap.set('n', '<M-h>', '<C-w>h')
+vim.keymap.set('n', '<M-j>', '<C-w>j')
+vim.keymap.set('n', '<M-k>', '<C-w>k')
+vim.keymap.set('n', '<M-l>', '<C-w>l')
+
+-- Terminal mode keymaps
+local opts = {}
+vim.keymap.set('t', '<esc>', '<C-\\><C-n>', opts)
+vim.keymap.set('t', 'jk', '<C-\\><C-o>', opts)
+--vim.keymap.set('t', '<C-h>', vim.cmd.wincmd("h"), opts)
+--vim.keymap.set('t', '<C-j>', vim.cmd.wincmd("j"), opts)
+--vim.keymap.set('t', '<C-k>', vim.cmd.wincmd("k"), opts)
+--vim.keymap.set('t', '<C-l>', vim.cmd.wincmd("l"), opts)
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
